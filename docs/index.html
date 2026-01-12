@@ -1,10 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Meditrack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditrack | Terminal-Based Health Tracking</title>
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--dark);
+            background-color: #f9f9f9;
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #27ae60; }
+        .btn-secondary { background: #34495e; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Meditrack</h1>
-    <p>This is the homepage of our Meditrack tool.</p>
+
+<header>
+    <h1>Meditrack</h1>
+    <p>Simple. Private. Automated. Medicine tracking from your CLI.</p>
+</header>
+
+<div class="container">
+    
+    <section class="card">
+        <h2>The Problem</h2>
+        <p>Managing daily medications and supplements is a burden. Traditional apps are bloated, require accounts, and track your data. <strong>Meditrack</strong> solves this by providing a lightweight, offline-first automation tool for your terminal.</p>
+    </section>
+
+    <section class="card" style="text-align: center; border: 2px solid var(--primary);">
+        <h2>Download Binaries</h2>
+        <p>Statically linked binaries for all platforms:</p>
+        <a href="https://github.com/alanirawad-sketch/Meditrack/releases" class="btn">Linux (aarch64) - Standard</a>
+        <a href="https://github.com/alanirawad-sketch/Meditrack/releases" class="btn btn-secondary">Linux (x86_64) - Bonus</a>
+        <p><small>Requirement: Statically linked Linux binaries as per exam specs.</small></p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Target Audience</h3>
+            <ul>
+                <li><strong>Developers:</strong> Track health without leaving the terminal.</li>
+                <li><strong>Privacy Seekers:</strong> 100% local JSON storage.</li>
+                <li><strong>Minimalists:</strong> No GUI, no distractions.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Monetization</h3>
+            <p><strong>Freemium Model:</strong></p>
+            <ul>
+                <li><strong>Free:</strong> Core CLI tool & local logging.</li>
+                <li><strong>$5/mo:</strong> Automatic encrypted cloud backup & PDF report generation for doctors.</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="card">
+        <h2>User Attraction Strategy</h2>
+        <p>I will attract users through <strong>Open Source community engagement</strong>:</p>
+        <ul>
+            <li>Showcasing the tool on <em>r/rust</em> and <em>Show HN</em>.</li>
+            <li>Providing easy installation via <code>cargo install meditrack</code>.</li>
+            <li>Focusing on "Zero-Knowledge" health tracking as a unique selling point.</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: #777;">
+    <p>&copy; 2024 Meditrack Project - Built with Rust</p>
+</footer>
+
 </body>
 </html>
