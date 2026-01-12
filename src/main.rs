@@ -1,6 +1,5 @@
 use serde::{Serialize, Deserialize};
 use std::fs;
-use std::io::{self, Write};
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Medication {
@@ -10,19 +9,20 @@ struct Medication {
 }
 
 fn main() {
-    println!("--- Welcome to Meditrack ---");
-    
-    // Simple example logic to ensure it compiles and works
-    let med = Medication {
-        name: String::from("Vitamin C"),
-        dosage: String::from("500mg"),
-        time: String::from("08:00"),
+    println!("--- Meditrack CLI Started ---");
+
+    // Creating a dummy medication to test serialization
+    let test_med = Medication {
+        name: "Test Pill".to_string(),
+        dosage: "10mg".to_string(),
+        time: "08:00".to_string(),
     };
 
-    println!("Tracking: {} ({}) at {}", med.name, med.dosage, med.time);
-    
-    // This creates a data folder if it doesn't exist
-    let _ = fs::create_dir_all("data");
-    
-    println!("Setup complete. Ready to automate your health!");
+    // Try to convert to JSON string to ensure serde is working
+    if let Ok(json) = serde_json::to_string(&test_med) {
+        println!("System Check: Medication serialized successfully.");
+        println!("Data format: {}", json);
+    }
+
+    println!("Success: Meditrack is ready for use.");
 }
