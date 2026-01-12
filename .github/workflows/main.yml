@@ -1,32 +1,15 @@
-name: Release
-on: [push]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pastebin.com - Not Found (#404)</title>
+</head>
+<body>
 
-jobs:
-  release:
-    name: Build and Release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-unknown-linux-gnu, x86_64-unknown-linux-musl
+<h1>Not Found (#404)</h1>
+<p>This page is no longer available. It has either expired, been removed by its creator, or removed by one of the Pastebin staff.</p>
 
-      - name: Build aarch64 (Required)
-        run: |
-          sudo apt-get update && sudo apt-get install -y gcc-aarch64-linux-gnu
-          cargo build --release --target aarch64-unknown-linux-gnu
-
-      - name: Build x86_64 Static (Bonus Points)
-        run: |
-          cargo build --release --target x86_64-unknown-linux-musl
-
-      - name: Upload Binaries
-        uses: actions/upload-artifact@v4
-        with:
-          name: meditrack-binaries
-          path: |
-            target/aarch64-unknown-linux-gnu/release/meditrack
-            target/x86_64-unknown-linux-musl/release/meditrack
+</body>
+</html>
