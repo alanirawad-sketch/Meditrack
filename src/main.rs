@@ -1,3 +1,13 @@
+use serde::{Serialize, Deserialize}; // Make sure this is at the top
+use std::fs;
+
+#[derive(Serialize, Deserialize, Debug)] // Added Debug just in case
+struct Medication {
+    name: String,
+    dosage: String,
+    time: String,
+}
+
 use std::env;
 use std::fs::{OpenOptions, read_to_string};
 use std::io::Write;
