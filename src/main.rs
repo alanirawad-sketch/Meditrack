@@ -1,13 +1,18 @@
-use serde::{Serialize, Deserialize}; // Make sure this is at the top
+use serde::{Serialize, Deserialize};
 use std::fs;
+use std::io::{self, Write};
 
-#[derive(Serialize, Deserialize, Debug)] // Added Debug just in case
+#[derive(Serialize, Deserialize, Debug)]
 struct Medication {
     name: String,
     dosage: String,
     time: String,
 }
 
+fn main() {
+    // Your existing logic here...
+    println!("Meditrack is running!");
+}
 use std::env;
 use std::fs::{OpenOptions, read_to_string};
 use std::io::Write;
