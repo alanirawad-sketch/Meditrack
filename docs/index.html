@@ -6,7 +6,7 @@
     <title>Meditrack | Terminal-Based Health Tracking</title>
     <style>
         :root {
-            /* New Vibrant "Midnight Neon" Palette */
+            /* Vibrant "Midnight Neon" Palette */
             --primary: #00f2fe; /* Electric Cyan */
             --secondary: #7000ff; /* Deep Purple */
             --accent: #ff007a; /* Neon Pink */
@@ -60,10 +60,12 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
+            min-width: 220px;
         }
         .btn:hover { 
             background: white;
             box-shadow: 0 0 20px var(--primary);
+            transform: scale(1.02);
         }
         .btn-secondary { 
             background: transparent; 
@@ -104,9 +106,15 @@
     <section class="card" style="text-align: center; border: 2px solid var(--accent); background: linear-gradient(to bottom, var(--card-bg), #2d1b36);">
         <h2>Get Started</h2>
         <p class="highlight-text">Statically linked, zero-dependency binaries:</p>
-        <a href="https://github.com/user-attachments/files/24574296/meditrack-aarch64.zip" class="btn">Download Linux (aarch64)</a>
-        <a href="https://github.com/alanirawad-sketch/Meditrack/releases" class="btn btn-secondary">All Releases (x86_64)</a>
-        <p><small style="color: var(--accent);">Built for speed. Optimized for privacy.</small></p>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <a href="https://github.com/alanirawad-sketch/Meditrack/releases/latest/download/meditrack-macos-arm64" class="btn">MacOS (Apple Silicon)</a>
+            <a href="https://github.com/alanirawad-sketch/Meditrack/releases/latest/download/meditrack-macos-x64" class="btn">MacOS (Intel)</a>
+            
+            <a href="https://github.com/alanirawad-sketch/Meditrack/releases/latest/download/meditrack-linux-x64" class="btn btn-secondary">Linux (x86_64)</a>
+        </div>
+
+        <p><small style="color: var(--accent); margin-top: 15px; display: block;">Built for speed. Optimized for privacy.</small></p>
     </section>
 
     <div class="grid">
