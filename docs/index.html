@@ -6,108 +6,150 @@
     <title>Meditrack | Terminal-Based Health Tracking</title>
     <style>
         :root {
-            --primary: #2ecc71;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
+            /* New Vibrant "Midnight Neon" Palette */
+            --primary: #00f2fe; /* Electric Cyan */
+            --secondary: #7000ff; /* Deep Purple */
+            --accent: #ff007a; /* Neon Pink */
+            --dark: #0f172a; /* Deep Space Blue */
+            --card-bg: #1e293b;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             margin: 0;
-            color: var(--dark);
-            background-color: #f9f9f9;
+            color: var(--text-light);
+            background-color: var(--dark);
+            background-image: radial-gradient(circle at top right, #1e1b4b, var(--dark));
         }
         header {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: white;
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
             padding: 20px;
         }
         .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
         }
         .btn {
             display: inline-block;
             background: var(--primary);
-            color: white;
-            padding: 12px 24px;
+            color: var(--dark);
+            padding: 14px 28px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 800;
             margin: 10px 5px;
-            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
         }
-        .btn:hover { background: #27ae60; }
-        .btn-secondary { background: #34495e; }
+        .btn:hover { 
+            background: white;
+            box-shadow: 0 0 20px var(--primary);
+        }
+        .btn-secondary { 
+            background: transparent; 
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        
+        h2, h3 { color: var(--primary); margin-top: 0; }
+        strong { color: var(--accent); }
+        code { 
+            background: #000; 
+            color: var(--primary);
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            font-family: 'Fira Code', monospace;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .highlight-text { color: var(--text-dim); }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Meditrack</h1>
-    <p>Simple. Private. Automated. Medicine tracking from your CLI.</p>
+    <h1 style="font-size: 3.5rem; margin: 0; letter-spacing: -2px;">MEDITRACK</h1>
+    <p style="font-size: 1.2rem; opacity: 0.9;">High-Performance Health Logging for Power Users.</p>
 </header>
 
 <div class="container">
     
     <section class="card">
-        <h2>The Problem</h2>
-        <p>Managing daily medications and supplements is a burden. Traditional apps are bloated, require accounts, and track your data. <strong>Meditrack</strong> solves this by providing a lightweight, offline-first automation tool for your terminal.</p>
+        <h2>The Vision</h2>
+        <p>Health tracking shouldn't feel like a chore or a data-mining operation. <strong>Meditrack</strong> is a blazingly fast, Rust-powered CLI tool that lives where you work. No heavy Electron apps, no proprietary clouds—just your data, your terminal, and your health.</p>
     </section>
 
-    <section class="card" style="text-align: center; border: 2px solid var(--primary);">
-        <h2>Download Binaries</h2>
-        <p>Statically linked binaries for all platforms:</p>
-        <a href="https://github.com/user-attachments/files/24574296/meditrack-aarch64.zip" class="btn">Linux (aarch64) - Standard</a>
-        <a href="https://github.com/alanirawad-sketch/Meditrack/releases" class="btn btn-secondary">Linux (x86_64) - Bonus</a>
-        <p><small>Statically linked Linux binaries.</small></p>
+    <section class="card" style="text-align: center; border: 2px solid var(--accent); background: linear-gradient(to bottom, var(--card-bg), #2d1b36);">
+        <h2>Get Started</h2>
+        <p class="highlight-text">Statically linked, zero-dependency binaries:</p>
+        <a href="https://github.com/user-attachments/files/24574296/meditrack-aarch64.zip" class="btn">Download Linux (aarch64)</a>
+        <a href="https://github.com/alanirawad-sketch/Meditrack/releases" class="btn btn-secondary">All Releases (x86_64)</a>
+        <p><small style="color: var(--accent);">Built for speed. Optimized for privacy.</small></p>
     </section>
 
     <div class="grid">
         <div class="card">
             <h3>Target Audience</h3>
             <ul>
-                <li><strong>Developers:</strong> Track health without leaving the terminal.</li>
-                <li><strong>Privacy Seekers:</strong> 100% local JSON storage.</li>
-                <li><strong>Minimalists:</strong> No GUI, no distractions.</li>
+                <li><strong>The "Quantified Self" Engineer:</strong> Users who already automate their lives via scripts and want to pipe health data into their custom dashboards.</li>
+                <li><strong>Biohackers & Protocol Adherents:</strong> Individuals managing complex supplement stacks (Nootropics, Longevity protocols) who value precision and speed.</li>
+                <li><strong>Privacy Purists:</strong> Users in sensitive professions who refuse to store medical data on third-party servers.</li>
+                <li><strong>Remote Workers:</strong> People who spend 8+ hours in a terminal and need a non-intrusive "nudge" to stay on top of their wellness.</li>
             </ul>
         </div>
         <div class="card">
-            <h3>Monetization Strategy </h3>
-            <p><strong>Freemium Model</strong></p>
+            <h3>Monetization Strategy</h3>
+            <p><strong>The "Open-Core" Approach</strong></p>
             <ul>
-                <li><strong>Free Tier: </strong> Full access to the core CLI tool.</li>
-                <li><strong>Pro Tier — $5/month: </strong> Automatic encrypted cloud backup & PDF report generation for doctors.</li>
+                <li><strong>Free:</strong> Unlimited local tracking, JSON exports, and core CLI functionality.</li>
+                <li><strong>Pro ($5/mo):</strong> 
+                    <ul>
+                        <li>End-to-end encrypted cloud sync.</li>
+                        <li>Beautifully templated PDF/LaTeX reports for medical professionals.</li>
+                        <li>SMS/Desktop notification hooks.</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
 
     <section class="card">
-        <h2>User Attraction Strategy</h2>
-        <p>I will attract users through <strong>Open Source community engagement</strong>:</p>
+        <h2>Growth & User Attraction</h2>
+        <p class="highlight-text">We aren't just building a tool; we're building a workflow.</p>
         <ul>
-            <li>Showcasing the tool on <em>r/rust</em> and <em>Show HN</em>.</li>
-            <li>Providing easy installation via <code>cargo install meditrack</code>.</li>
-            <li>Focusing on "Zero-Knowledge" health tracking as a unique selling point.</li>
+            <li><strong>Developer Ecosystem:</strong> Releasing a <code>meditrack-api</code> crate to allow other Rust developers to build plugins or TUI (Terminal UI) wrappers.</li>
+            <li><strong>Technical Content:</strong> Publishing "Why I switched from MyFitnessPal to the CLI" on <em>Hacker News</em> and <em>Dev.to</em> to spark the "minimalism" debate.</li>
+            <li><strong>The "Rice" Factor:</strong> Encouraging users on <em>r/UnixPorn</em> to share their terminal setups featuring Meditrack's sleek output.</li>
+            <li><strong>Package Manager Presence:</strong> Getting Meditrack into <code>Homebrew</code>, <code>AUR</code>, and <code>Scoop</code> to reduce friction to a single command.</li>
         </ul>
     </section>
 
 </div>
 
-<footer style="text-align: center; padding: 2rem; color: #777;">
-    <p>&copy; 2024 Meditrack Project - Built with Rust</p>
+<footer style="text-align: center; padding: 3rem; color: var(--text-dim); font-size: 0.9rem;">
+    <p>&copy; 2024 Meditrack Project - Forged in Rust</p>
 </footer>
 
 </body>
