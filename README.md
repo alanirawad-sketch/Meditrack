@@ -15,7 +15,7 @@ Meditrack solves the problem of "app bloat." Instead of opening a slow mobile ap
 * **🚀 Blazingly Fast:** Written in Rust for near-zero startup time and minimal resource usage.
 * **🔒 Absolute Privacy:** 100% local storage. Your medication history never leaves your machine.
 * **📂 Simple Data Format:** Uses human-readable JSON storage, making backups and custom scripting easy.
-* **🎯 Zero Distractions:** No notifications, no ads, and no tracking—just the utility you need.
+* **🎯 Zero Distractions:** No notifications, no ads, and no tracking just the utility you need.
 
 ---
 
@@ -39,21 +39,21 @@ cargo build --release
 
 ⌨️ Basic Commands
 
-   *Action*	                        *Command*
+[Action]	              [Command]
 Add Medicine	          meditrack add "Aspirin" "500mg" "08:00"
 View Schedule	          meditrack list
 Mark as Taken          	meditrack take <ID>
 Help	                  meditrack help
-[Spreadsheet](https://docs.google.com/spreadsheets/d/1fJUBmDKpyvDQX5I_F4fLjsKwuXsDDcRxsGG1wbxWnck/edit?usp=sharing)
+Spreadsheet for the action and command [Spreadsheet](https://docs.google.com/spreadsheets/d/1fJUBmDKpyvDQX5I_F4fLjsKwuXsDDcRxsGG1wbxWnck/edit?usp=sharing) page.
 
 🛠 Usage Examples
 
 - Adding a daily supplement:
-meditrack add "Vitamin D3" "5000IU" "09:00"
+  meditrack add "Vitamin D3" "5000IU" "09:00"
 - Checking your daily progress:
-meditrack list
+  meditrack list
 - Marking as taken:
-meditrack take 1
+  meditrack take 1
 
 🎯 Target Audience
 
