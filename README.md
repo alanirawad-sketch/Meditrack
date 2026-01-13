@@ -42,9 +42,9 @@ cargo build --release
 [Action]	              [Command]
 Add Medicine	          meditrack add "Aspirin" "500mg" "08:00"
 View Schedule	          meditrack list
-Mark as Taken          	meditrack take <ID>
+Mark as Taken             	meditrack take <ID>
 Help	                  meditrack help
-Spreadsheet for the action and command [Spreadsheet](https://docs.google.com/spreadsheets/d/1fJUBmDKpyvDQX5I_F4fLjsKwuXsDDcRxsGG1wbxWnck/edit?usp=sharing) page.
+
 
 🛠 Usage Examples
 
@@ -64,7 +64,7 @@ Privacy Purists: 100% offline and under your total control.
 💰 Monetization Strategy
 
 Free Tier: 100% access to the core CLI tool and local tracking.
-Pro Tier ($5/mo): Encrypted cloud backup and PDF report generation.
+Pro Tier($5/mo): Encrypted cloud backup and PDF report generation.
 
 🤝 Contributing
 
