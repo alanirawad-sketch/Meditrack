@@ -1,0 +1,41 @@
+name: Release Binaries
+
+on:
+  push:
+    tags:
+      - 'v*' # This triggers the build when you push a tag like v1.0.1
+
+jobs:
+  build:
+    name: Build for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build Binary
+        run: cargo build --release
+
+      - name: Rename Binaries
+        shell: bash
+        run: |
+          if [ "${{ matrix.os }}" = "macos-latest" ]; then
+            mv target/release/meditrack target/release/meditrack-macos
+          else
+            mv target/release/meditrack target/release/meditrack-linux
+          fi
+
+      - name: Upload Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            target/release/meditrack-macos
+            target/release/meditrack-linux
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
