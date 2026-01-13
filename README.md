@@ -42,7 +42,7 @@ cargo build --release
 [Action]	              [Command]
 Add Medicine	          meditrack add "Aspirin" "500mg" "08:00"
 View Schedule	          meditrack list
-Mark as Taken             	meditrack take <ID>
+Mark as Taken             meditrack take <ID>
 Help	                  meditrack help
 
 
