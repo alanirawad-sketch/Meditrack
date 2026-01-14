@@ -64,7 +64,7 @@ Privacy Purists: 100% offline and under your total control.
 💰 Monetization Strategy
 
 Free Tier: 100% access to the core CLI tool and local tracking.
-Pro Tier($5/mo): Encrypted cloud backup and PDF report generation.
+Pro Tier(€5/mo): Encrypted cloud backup and PDF report generation.
 
 🤝 Contributing
 
