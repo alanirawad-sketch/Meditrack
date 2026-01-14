@@ -66,6 +66,18 @@ Privacy Purists: 100% offline and under your total control.
 Free Tier: 100% access to the core CLI tool and local tracking.
 Pro Tier(€5/mo): Encrypted cloud backup and PDF report generation.
 
+📁 Repository Structure
+
+Meditrack/
+├── src/                # Source code
+├── docs/               # Documentation
+├── .github/            # GitHub workflows (CI/CD)
+├── .cargo/             # Cargo configuration
+├── Cargo.toml          # Rust project config
+├── LICENSE             # License file
+├── README.md           # Project overview
+└── medications.txt     # Sample data
+
 🤝 Contributing
 
 1. Fork the repository.
